@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>SignUp Page</title>
+    <style>
+      /* Center the form div and add margin and padding */
+      div.form-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 50px auto; /* Centers the form horizontally and adds margin at the top */
+        padding: 20px; /* Adds padding inside the form container */
+        border: 1px solid #ccc; /* Optional: Adds a border to the form container */
+        border-radius: 10px; /* Optional: Adds rounded corners to the form container */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to the form container */
+        background-color: #f9f9f9; /* Optional: Adds a background color to the form container */
+      }
+
+      /* Additional styles for form elements */
+      .form-container .form-label {
+        font-weight: bold;
+      }
+
+      .form-container .form-control {
+        margin-bottom: 10px;
+      }
+
+      .form-container .form-text {
+        margin-top: -5px;
+        margin-bottom: 10px;
+      }
+
+      .form-container .btn {
+        width: 100%; /* Makes the button full-width */
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <div class="form-container">
+      <form method="post" action="/user/signin">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <%- include('./partials/scripts') %>
+  </body>
+</html>
